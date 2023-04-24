@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_csc_picker/flutter_csc_picker.dart';
 
 import 'package:get/get.dart';
 import 'package:myrealty/app/components/CommonImageView.dart';
@@ -9,8 +8,6 @@ import 'package:myrealty/app/services/colors.dart';
 import 'package:myrealty/app/services/responsive_size.dart';
 import 'package:myrealty/app/services/strings.dart';
 import 'package:myrealty/app/services/textstyles.dart';
-
-import '../../../components/custom_textfiled.dart';
 import '../../../components/gredient_button.dart';
 import '../../../services/dialog_helper.dart';
 import '../controllers/edit_profile_controller.dart';
@@ -180,45 +177,19 @@ class EditProfileView extends GetView<EditProfileController> {
                       Row(
                         children: [
                           Flexible(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    Strings.City,
-                                    style: TextStyleUtil.txt16_4(
-                                      fontWeight: FontWeight.w500,
-                                      color: ColorUtil.kdark,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: 4.kh),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color: ColorUtil.kdark,
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 8.0.kh, vertical: 16.kh),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Flexible(
-                                            child: Text(
-                                          Strings.selectYourcity,
-                                          style: TextStyleUtil.txt16_4(),
-                                        )),
-                                        Icon(Icons.keyboard_arrow_down)
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            child: CustomTextFiledTitle(
+                              title: Strings.City,
+                              hint: '',
+                              inputType: TextInputType.streetAddress,
+                              controller: controller.eCity,
+                              validator: (value) {
+                                controller.isCity.value = false;
+                                if (value!.isEmpty) {
+                                  return Strings.PleaseEnterValid + Strings.Street;
+                                }
+                                controller.isCity.value = true;
+                                return null;
+                              },
                             ),
                           ),
                           SizedBox(

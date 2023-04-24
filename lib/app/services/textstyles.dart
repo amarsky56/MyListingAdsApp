@@ -53,6 +53,19 @@ class TextStyleUtil {
       ),
     );
   }
+  static TextStyle txt17_7({
+    //NimbusSanL
+    Color color = ColorUtil.brandColor1,
+    FontWeight fontWeight = FontWeight.w700,
+  }) {
+    return GoogleFonts.raleway(
+      textStyle: TextStyle(
+        color: color,
+        fontSize: 17.kh,
+        fontWeight: fontWeight,
+      ),
+    );
+  }
   static TextStyle txt12_4({
     //NimbusSanL
     Color color = ColorUtil.brandColor1,

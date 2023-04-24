@@ -24,7 +24,7 @@ class LoginController extends GetxController {
       if(response.data['newUser']==true){
         Get.toNamed(Routes.VERIFICATION);
       }else{
-        Get.toNamed(Routes.EDIT_PROFILE);
+        Get.offAllNamed(Routes.HOME);
       }
 
     } catch (e) {

@@ -27,11 +27,15 @@ class EditProfileController extends GetxController {
 
   var isStreet = false.obs;
 
-  RxString countryValue="".obs;
+  RxString countryValue = "".obs;
 
-  RxString stateValue="".obs;
+  RxString stateValue = "".obs;
 
-  RxString cityValue="".obs;
+  RxString cityValue = "".obs;
+
+  var eCity =TextEditingController();
+
+  var isCity  =false.obs;
 
   @override
   void onInit() {
@@ -39,6 +43,6 @@ class EditProfileController extends GetxController {
   }
 
   save() {
-
+    Get.toNamed(Routes.HOME);
   }
 }

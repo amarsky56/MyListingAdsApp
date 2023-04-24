@@ -36,13 +36,35 @@ class Strings {
 
   static String Edityourprofile = "Edit your profile";
 
-  static String ListingAds="Listing Ads";
+  static String ListingAds = "Listing Ads";
 
-  static String City="City";
+  static String City = "City";
 
-  static String selectYourcity="select your city";
+  static String selectYourcity = "select your city";
 
-  static String state="State/Province";
+  static String state = "State/Province";
 
-  static String selectYourState="select your state";
+  static String selectYourState = "select your state";
+
+  static String Copy = "Copy";
+
+  static String All = "All";
+
+  static String images = "images";
+
+  static var RecentlyAdded = "Recently Added";
+
+  static String CreateAds = "Create Ads";
+
+  static var MLSListingID ="MLS Listing ID";
+
+  static var title  ="Title";
+
+  static var Subtitle ="Subtitle";
+
+  static String ShowPrice="Show Price";
+
+  static String NoAdsAvailable="No Ads\n Available";
+
+  static String Clickoncreateadstocreate="Click on create ads to\n create add";
 }
