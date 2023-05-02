@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cached_network_svg_image/cached_network_svg_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:myrealty/app/components/ImgPath.dart';
 import 'package:myrealty/app/services/responsive_size.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -33,7 +34,7 @@ class CommonImageView extends StatelessWidget {
       this.height,
       this.width,
       this.fit = BoxFit.contain,
-      this.placeHolder = 'assets/img/bookNow.png',
+      this.placeHolder = 'assets/png/temp.png',
       this.isShimmerLoadig = false});
 
   @override
@@ -46,6 +47,7 @@ class CommonImageView extends StatelessWidget {
       return Container(
         height: height,
         width: width,
+        decoration: boxdecoration,
         child: CachedNetworkSVGImage(
           svgUrl!,
           height: height,
@@ -55,7 +57,6 @@ class CommonImageView extends StatelessWidget {
           placeholder: const CircularProgressIndicator(color: Colors.green),
           fadeDuration: const Duration(milliseconds: 500),
         ),
-        decoration: boxdecoration,
       );
     }
     if (svgPath != null && svgPath!.isNotEmpty) {
@@ -122,7 +123,7 @@ class ShimmerLoadig extends StatelessWidget {
   final double height;
   final double width;
 
-  ShimmerLoadig({Key? key, required this.height, required this.width}) : super(key: key);
+  const ShimmerLoadig({Key? key, required this.height, required this.width}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -141,8 +142,8 @@ class ShimmerLoadig extends StatelessWidget {
               child: SizedBox(
                   height: 50.kh,
                   width: 50.kw,
-                  child: SvgPicture.asset(
-                    "assets/icon/empty.svg",
+                  child: Image.asset(
+                    ImgPath.pngLogo,
                     color: Colors.black,
                   )),
             ),

@@ -13,6 +13,14 @@ class GetStorageService extends GetxService {
 
   set authToken(String value) => _runData.write('authToken', value);
 
+  String get expiration => _runData.read('expiration') ?? '';
+
+  set expiration(String expiration) => _runData.write('expiration', expiration);
+
+  String get deviceId => _runData.read('deviceId') ?? '';
+
+  set deviceId(String deviceId) => _runData.write('deviceId', deviceId);
+
   String get uid => _runData.read('uid') ?? '';
 
   set uid(String value) => _runData.write('uid', value);
@@ -23,7 +31,5 @@ class GetStorageService extends GetxService {
     return this;
   }
 
-  void logout() {
-    _runData.erase();
-  }
+
 }

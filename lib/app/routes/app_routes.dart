@@ -9,6 +9,8 @@ abstract class Routes {
   static const VERIFICATION = _Paths.VERIFICATION;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
+  static const LISTING_ADS = _Paths.LISTING_ADS;
+  static const EVENT_ADS = _Paths.EVENT_ADS;
 }
 
 abstract class _Paths {
@@ -19,4 +21,6 @@ abstract class _Paths {
   static const VERIFICATION = '/verification';
   static const DASHBOARD = '/dashboard';
   static const EDIT_PROFILE = '/edit-profile';
+  static const LISTING_ADS = '/listing-ads';
+  static const EVENT_ADS = '/event-ads';
 }

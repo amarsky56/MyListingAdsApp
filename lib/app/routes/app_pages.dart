@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
+import '../modules/EventAds/bindings/event_ads_binding.dart';
+import '../modules/EventAds/views/event_ads_view.dart';
+import '../modules/ListingAds/bindings/listing_ads_binding.dart';
+import '../modules/ListingAds/views/listing_ads_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
@@ -50,6 +54,16 @@ class AppPages {
       name: _Paths.EDIT_PROFILE,
       page: () => const EditProfileView(),
       binding: EditProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.LISTING_ADS,
+      page: () => const ListingAdsView(),
+      binding: ListingAdsBinding(),
+    ),
+    GetPage(
+      name: _Paths.EVENT_ADS,
+      page: () => const EventAdsView(),
+      binding: EventAdsBinding(),
     ),
   ];
 }

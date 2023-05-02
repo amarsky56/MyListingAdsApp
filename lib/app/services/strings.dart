@@ -67,4 +67,14 @@ class Strings {
   static String NoAdsAvailable="No Ads\n Available";
 
   static String Clickoncreateadstocreate="Click on create ads to\n create add";
+
+  static String msg= "Please check all your fields before proceeding.";
+
+  static String Create="Create";
+
+  static var address ="Address";
+
+  static var Features="Features";
+
+  static String Price="Price";
 }

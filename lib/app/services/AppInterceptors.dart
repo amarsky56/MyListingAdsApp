@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:myrealty/app/services/storage.dart';
 import 'api_service.dart';
 import 'dialog_helper.dart';
 
@@ -11,7 +14,7 @@ class AppInterceptors extends Interceptor {
 
   @override
   FutureOr<dynamic> onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    // options.headers = {"token": Get.find<GetStorageService>().token};
+    options.headers = {"Authorization": "Bearer "+Get.find<GetStorageService>().authToken};
     isOverlayLoader ? DialogHelper.showLoading() : null;
     super.onRequest(options, handler);
   }
@@ -34,6 +37,8 @@ class AppInterceptors extends Interceptor {
       final errorMessage = DioExceptions.fromDioError(dioError).toString();
       isOverlayLoader ? DialogHelper.hideDialog() : null;
       showSnakbar == true ? DialogHelper.showMySnackbar("Notification", errorMessage) : null;
+
+
     } catch (e) {
       isOverlayLoader ? DialogHelper.hideDialog() : null;
       print(e);

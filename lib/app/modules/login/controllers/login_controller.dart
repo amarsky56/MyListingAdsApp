@@ -1,14 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:myrealty/app/routes/app_pages.dart';
-
 import '../../../services/ApiRepo.dart';
 import '../../../services/dialog_helper.dart';
-import '../../../services/storage.dart';
 
 class LoginController extends GetxController {
   var ePhone = TextEditingController();
-
   var isPhoneValid = false.obs;
 
   @override
@@ -19,14 +16,10 @@ class LoginController extends GetxController {
   sentOtp() async {
     DialogHelper.showLoading();
     try {
-      final response = await ApiRepo.login(body: {"phone": ePhone.text.toString()});
-      Get.find<GetStorageService>().authToken = response.data['token'];
-      if(response.data['newUser']==true){
-        Get.toNamed(Routes.VERIFICATION);
-      }else{
-        Get.offAllNamed(Routes.HOME);
+      final response = await ApiRepo.sendVerificationsms(body: {"phone": ePhone.text.toString()});
+      if (response.data == true) {
+        Get.toNamed(Routes.VERIFICATION,arguments: ePhone.text.toString());
       }
-
     } catch (e) {
       print(e);
     }

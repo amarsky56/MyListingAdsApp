@@ -11,6 +11,6 @@ class SplashController extends GetxController {
   void onInit() {
     super.onInit();
     imgSplash.value = ImgPath.pngLogo;
-    Future.delayed(Duration(seconds: 1)).then((value) => Get.offAllNamed(Get.find<GetStorageService>().isLoggedIn ? Routes.LOGIN : Routes.HOME));
+    Future.delayed(const Duration(seconds: 1)).then((value) => Get.offAllNamed(Get.find<GetStorageService>().isLoggedIn ? Routes.HOME : Routes.LOGIN));
   }
 }
